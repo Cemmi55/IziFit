@@ -1,0 +1,151 @@
+/* @tailwind base;
+@tailwind components; */
+@tailwind utilities;
+@import "tailwindcss";
+
+
+/* IziFit custom */
+:root {
+    /* White Filter */
+    --white_filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(54deg) brightness(105%) contrast(101%);
+}
+
+.nav-wrapper {
+    @apply relative container m-auto p-2;
+}
+
+.nav-el-wrapper {
+    @apply flex items-center justify-between h-[70px];
+}
+
+.img-logo {
+    @apply pt-0.5 pl-2 w-[100px] h-[40px];
+}
+
+.img-logo img {
+    filter: var(--white_filter);
+}
+
+.nav-el-items {
+    @apply hidden space-x-6 md:flex;
+}
+
+.hero-wrapper {
+    @apply flex justify-center items-center pt-2 pb-2 pl-7 pr-7 h-full;
+}
+
+.video-controll {
+    @apply w-full h-[25vh] sm:h-[30vh] md:h-[40vh] lg:h-[50vh] xl:h-[90vh] rounded-xl shadow-lg;
+}
+
+
+
+.nav-el-text {
+    @apply hidden p-3 px-6 pt-2 text-[#fff] md:block text-2xl font-bold border-[#c3b797] border rounded-4xl bg-[#c3b797];
+}
+
+/* form-styles.css */
+#cta {
+    @apply p-2;
+}
+
+.form-wrapper {
+    @apply max-w-lg mx-auto my-20 p-8 bg-gray-800 rounded-3xl shadow-xl flex flex-col items-center;
+}
+
+.input-field {
+    @apply w-full px-4 py-3 mb-4 rounded-xl border border-gray-600 bg-gray-700 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500;
+}
+
+.textarea-field {
+    @apply w-full px-4 py-3 mb-4 rounded-xl border border-gray-600 bg-gray-700 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 resize-none;
+}
+
+.submit-btn {
+    @apply px-6 py-3 text-white rounded-full bg-cyan-500 hover:bg-cyan-600 focus:outline-none;
+}
+
+.form-heading {
+    @apply text-3xl font-bold text-white text-center uppercase;
+}
+/* End */
+body {
+    @apply bg-[#3d3d3d];
+}
+
+@media (min-width: 768px) {
+    body::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    body::-webkit-scrollbar-track {
+        @apply bg-[#272727] rounded-full;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        @apply bg-[#c3b797] rounded-full;
+    }
+}
+
+#cta {
+    /* background-image: url('../img/bg-simplify-section-desktop.svg'); */
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 576px) {
+    body {
+        background-position: 50px -50px;
+        background-size: 500px;
+    }
+
+    #cta {
+        background-image: url("../img/bg-simplify-section-mobile.svg");
+    }
+}
+
+/* Hamburger Menu */
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+.hamburger-middle {
+    transform: translateY(7px);
+}
+
+.hamburger-bottom {
+    transform: translateY(14px);
+}
+
+.open {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+}
+
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+    display: none;
+}
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
