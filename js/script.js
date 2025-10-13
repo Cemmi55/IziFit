@@ -11,35 +11,41 @@ const nameEl = document.getElementById("name");
 const msgEl = document.getElementById("message");
 const phoneEl = document.getElementById("phone");
 
-// Fixed WhatsApp number for desktop fallback
+// Fixed numbers for WhatsApp / Viber
 const whatsappNumber = "381621681385";
+const viberNumber = "381621681385";
 
 // Clean user input
 function sanitizePhone(input) {
   return input.replace(/\D/g, "");
 }
 
-document.getElementById("sendBtn").addEventListener("click", async () => {
+document.getElementById("sendBtn").addEventListener("click", () => {
   const userPhone = sanitizePhone(phoneEl.value);
-  const message = `Ime: ${nameEl.value}\nTelefon: ${userPhone}\nPoruka: ${msgEl.value}`;
+  const text = `Ime: ${nameEl.value}\nTelefon: ${userPhone}\nPoruka: ${msgEl.value}`;
+  const textEncoded = encodeURIComponent(text);
 
-  if (navigator.share) {
-    // Mobile: system share sheet
-    try {
-      await navigator.share({
-        title: "Kontaktiraj Nas",
-        text: message
-      });
-      console.log("Share successful");
-    } catch (err) {
-      console.error("Share failed:", err);
+  // Ask user which app
+  const choice = window.prompt("Unesite 1 za WhatsApp, 2 za Viber", "1");
+
+  if (choice === "1") {
+    // WhatsApp
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      // Mobile WhatsApp app
+      window.open(`https://wa.me/${whatsappNumber}?text=${textEncoded}`, "_blank");
+    } else {
+      // Desktop WhatsApp Web
+      window.open(`https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${textEncoded}`, "_blank");
     }
+  } else if (choice === "2") {
+    // Viber
+    // Only works if Viber app installed
+    window.location.href = `viber://chat?number=%2B${viberNumber}&text=${textEncoded}`;
   } else {
-    // Desktop: open WhatsApp Web
-    const textEncoded = encodeURIComponent(message);
-    window.open(`https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${textEncoded}`, "_blank");
+    alert("Nevažeći izbor!");
   }
 });
+
 
 
 
