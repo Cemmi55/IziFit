@@ -11,33 +11,36 @@ const nameEl = document.getElementById("name");
 const msgEl = document.getElementById("message");
 const phoneEl = document.getElementById("phone");
 
-// Fixed recipient numbers (international, no +)
+// Fixed WhatsApp number for desktop fallback
 const whatsappNumber = "381621681385";
-const viberNumber = "381621681385";
 
-// Function to clean user phone input
+// Clean user input
 function sanitizePhone(input) {
   return input.replace(/\D/g, "");
 }
 
-// WhatsApp
-document.getElementById("sendWhatsApp").addEventListener("click", () => {
+document.getElementById("sendBtn").addEventListener("click", async () => {
   const userPhone = sanitizePhone(phoneEl.value);
-  const text = encodeURIComponent(
-    `Ime: ${nameEl.value}\nTelefon: ${userPhone}\nPoruka: ${msgEl.value}`
-  );
-  window.open(
-    `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${text}`,
-    "_blank"
-  );
+  const message = `Ime: ${nameEl.value}\nTelefon: ${userPhone}\nPoruka: ${msgEl.value}`;
+
+  if (navigator.share) {
+    // Mobile: system share sheet
+    try {
+      await navigator.share({
+        title: "Kontaktiraj Nas",
+        text: message
+      });
+      console.log("Share successful");
+    } catch (err) {
+      console.error("Share failed:", err);
+    }
+  } else {
+    // Desktop: open WhatsApp Web
+    const textEncoded = encodeURIComponent(message);
+    window.open(`https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${textEncoded}`, "_blank");
+  }
 });
 
-// Viber
-document.getElementById("sendViber").addEventListener("click", () => {
-  const userPhone = sanitizePhone(phoneEl.value);
-  const text = encodeURIComponent(
-    `Ime: ${nameEl.value}\nTelefon: ${userPhone}\nPoruka: ${msgEl.value}`
-  );
-  window.location.href = `viber://chat?number=%2B${viberNumber}&text=${text}`;
-});
+
+
 
