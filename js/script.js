@@ -11,9 +11,8 @@ const nameEl = document.getElementById("name");
 const msgEl = document.getElementById("message");
 const phoneEl = document.getElementById("phone");
 
-// Fixed numbers for WhatsApp / Viber
+// Fixed number for WhatsApp
 const whatsappNumber = "381621681385";
-const viberNumber = "381621681385";
 
 // Clean user input
 function sanitizePhone(input) {
@@ -25,12 +24,14 @@ document.getElementById("sendBtn").addEventListener("click", () => {
   const text = `Ime: ${nameEl.value}\nTelefon: ${userPhone}\nPoruka: ${msgEl.value}`;
   const textEncoded = encodeURIComponent(text);
 
-      // Desktop WhatsApp Web
-      window.open(`https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${textEncoded}`, "_blank");
-    
+  // Detect mobile
+  const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // Open WhatsApp app on mobile
+    window.open(`https://wa.me/${whatsappNumber}?text=${textEncoded}`, "_blank");
+  } else {
+    // Open WhatsApp Web on desktop
+    window.open(`https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${textEncoded}`, "_blank");
+  }
 });
-
-
-
-
-
