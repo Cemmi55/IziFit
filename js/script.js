@@ -25,25 +25,9 @@ document.getElementById("sendBtn").addEventListener("click", () => {
   const text = `Ime: ${nameEl.value}\nTelefon: ${userPhone}\nPoruka: ${msgEl.value}`;
   const textEncoded = encodeURIComponent(text);
 
-  // Ask user which app
-  const choice = window.prompt("Unesite 1 za WhatsApp, 2 za Viber", "1");
-
-  if (choice === "1") {
-    // WhatsApp
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-      // Mobile WhatsApp app
-      window.open(`https://wa.me/${whatsappNumber}?text=${textEncoded}`, "_blank");
-    } else {
       // Desktop WhatsApp Web
       window.open(`https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${textEncoded}`, "_blank");
-    }
-  } else if (choice === "2") {
-    // Viber
-    // Only works if Viber app installed
-    window.location.href = `viber://chat?number=%2B${viberNumber}&text=${textEncoded}`;
-  } else {
-    alert("Nevažeći izbor!");
-  }
+    
 });
 
 
