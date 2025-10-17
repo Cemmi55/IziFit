@@ -23,7 +23,7 @@
 }
 
 .img-logo img {
-    filter: var(--white_filter);
+    /* filter: var(--white_filter); */
 }
 
 .nav-el-items {
@@ -35,9 +35,32 @@
 }
 
 .video-controll {
-    @apply w-full h-[25vh] sm:h-[30vh] md:h-[40vh] lg:h-[50vh] xl:h-[90vh] rounded-xl shadow-lg;
+  @apply w-full max-w-full rounded-xl shadow-lg object-cover;
+  aspect-ratio: 16 / 9; /* održava proporciju */
 }
 
+/* Za jako male ekrane – više visine */
+@media (max-width: 640px) {
+  .video-controll {
+    aspect-ratio: 4 / 3; /* veća visina na mobilnim */
+    @apply h-auto;
+  }
+}
+
+/* Za tablet uređaje */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .video-controll {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+#button-wrapper {
+    @apply mt-8 flex justify-center;
+}
+
+.button_scroll {
+    @apply bg-gradient-to-r from-red-500 to-orange-400 text-white font-semibold text-2xl px-8 py-10 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:from-orange-500 hover:to-yellow-400 cursor-pointer;
+}
 
 
 .nav-el-text {
@@ -69,8 +92,83 @@
     @apply text-3xl font-bold text-white text-center uppercase;
 }
 /* End */
+
+/* Features */
+#features {
+    @apply mb-10;
+}
+
+.features-wrapper{
+    @apply container flex flex-col px-4 mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row;
+}
+
+.text-wrapper{
+    @apply flex flex-col space-y-7 md:w-1/2 justify-center;
+}
+
+.text-h2{
+   @apply max-w-md text-5xl font-bold text-center md:text-left;
+}
+
+.paragraph{
+    @apply max-w-sm text-center text-2xl md:text-left;
+}
+
+.n-list {
+    @apply flex flex-col space-y-8 md:w-1/2;
+}
+
+.list {
+    @apply flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row;
+}
+
+.img-cont {
+    @apply rounded-lg overflow-hidden md:w-full;
+}
+/* End */
+
+/* Plans */
+
+#plans {
+    @apply py-20;
+}
+
+.plans-wrapper {
+    @apply max-w-6xl mx-auto px-6 text-center;
+}
+
+.plans-header {
+    @apply text-4xl font-bold text-gray-800 mb-12
+}
+
+.card-cont {
+    @apply grid gap-8 sm:grid-cols-2 lg:grid-cols-3
+}
+
+.card-wrap {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 flex flex-col justify-between p-8;
+}
+
+.card-wrap-pro {
+    @apply bg-gradient-to-b from-amber-200 to-amber-600 rounded-2xl shadow-2xl text-white flex flex-col justify-between p-8 scale-105;
+}
+
+.icon {
+    @apply w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-amber-100 text-amber-600 rounded-full text-2xl;
+}
+
+.plan-text1 {
+    @apply text-2xl font-semibold text-gray-800 mb-2;
+}
+
+.play-text2 {
+    @apply text-2xl font-semibold mb-2;
+}
+/* End */
+
 body {
-    @apply bg-[#3d3d3d];
+    /* @apply bg-[#DDF9F1]; */
+    @apply bg-gray-100;
 }
 
 @media (min-width: 768px) {

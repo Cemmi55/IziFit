@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/main.css" />
   <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>IziFit</title>
 </head>
 
@@ -24,33 +25,37 @@
 
   <!-- Hero Section -->
   <section id="hero">
-    <!-- Video -->
     <div class="hero-wrapper">
       <video controls class="video-controll">
         <source src="video/Epic.mp4" type="video/mp4" />
       </video>
     </div>
+    <div id="button-wrapper">
+      <button class="button_scroll">
+        Rezerviši svoje mesto
+      </button>
+    </div>
   </section>
 
   <section id="features">
     <!-- Flex container -->
-    <div class="container flex flex-col px-4 mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row">
+    <div class="features-wrapper">
       <!-- What's Different -->
-      <div class="flex flex-col space-y-7 md:w-1/2">
-        <h2 class="max-w-md text-5xl font-bold text-center md:text-left">
+      <div class="text-wrapper">
+        <h2 class="text-h2">
           Zdrava ishrana, zdrav život
         </h2>
-        <p class="max-w-sm text-center text-2xl md:text-left">
+        <p class="paragraph">
           Pravilna ishrana se bazira na svežem voću, povrću i integralnim namirnicama. Zdrava hrana pomaže telu da
           funkcioniše optimalno i održava energiju tokom celog dana.
         </p>
       </div>
       <!-- Numbered List -->
-      <div class="flex flex-col space-y-8 md:w-1/2">
+      <div class="n-list">
         <!-- List Item 1 -->
-        <div class="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row">
+        <div class="list">
           <!-- Image Container -->
-          <div class="rounded-lg overflow-hidden md:w-full">
+          <div class="img-cont">
             <img src="img/food.webp" alt="Feature Image" class="w-full h-auto object-cover rounded-lg" />
           </div>
         </div>
@@ -59,51 +64,80 @@
   </section>
 
 
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <!-- Container to heading and testm blocks -->
-    <div class="max-w-6xl px-5 mx-auto mt-32 text-center">
-      <!-- Heading -->
-      <h2 class="text-4xl font-bold text-center">
-        What's Different About Manage?
-      </h2>
-      <!-- Testimonials Container -->
-      <div class="flex flex-col mt-24 md:flex-row md:space-x-6">
-        <!-- Testimonial 1 -->
-        <div class="flex flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:w-1/3">
-          <img src="img/avatar-anisha.png" class="w-16 -mt-14" alt="" />
-          <h5 class="text-lg font-bold">Anisha Li</h5>
-          <p class="text-sm text-darkGrayishBlue">
-            “Manage has supercharged our team’s workflow. The ability to
-            maintain visibility on larger milestones at all times keeps
-            everyone motivated.”
-          </p>
+  <!-- Plans -->
+  <section id="plans">
+    <div class="plans-wrapper">
+      <h2 class="plans-header">Choose Your Fitness Plan</h2>
+
+      <!-- Responsive Cards Container -->
+      <div class="card-cont">
+
+        <!-- Starter Plan -->
+        <div class="card-wrap">
+          <div>
+            <div class="icon">
+              💪
+            </div>
+            <h3 class="plan-text1">Starter Plan</h3>
+            <p class="text-gray-500 text-sm mb-6">Perfect for beginners starting their fitness journey.</p>
+            <p class="text-5xl font-bold text-amber-500 mb-6">$19<span class="text-lg text-gray-400">/mo</span></p>
+            <ul class="text-gray-700 text-sm space-y-3 text-left">
+              <li>🏋️ Access to basic gym equipment</li>
+              <li>🕒 3 training sessions per week</li>
+              <li>🥗 Basic meal plan</li>
+            </ul>
+          </div>
+          <button class="mt-8 w-full py-3 rounded-lg bg-amber-500 text-white font-semibold hover:bg-amber-800 transition">
+            Get Started
+          </button>
         </div>
 
-        <!-- Testimonial 2 -->
-        <div class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3">
-          <img src="img/avatar-ali.png" class="w-16 -mt-14" alt="" />
-          <h5 class="text-lg font-bold">Ali Bravo</h5>
-          <p class="text-sm text-darkGrayishBlue">
-            “We have been able to cancel so many other subscriptions since
-            using Manage. There is no more cross-channel confusion and
-            everyone is much more focused.”
-          </p>
+        <!-- Pro Plan -->
+        <div class="card-wrap-pro">
+          <div>
+            <div class="icon">
+              🔥
+            </div>
+            <h3 class="play-text2">Pro Plan</h3>
+            <p class="text-gray-100 text-sm mb-6">For those ready to push beyond their limits.</p>
+            <p class="text-5xl font-bold mb-6">$39<span class="text-lg text-gray-100">/mo</span></p>
+            <ul class="text-sm space-y-3 text-left">
+              <li>💪 Full gym access</li>
+              <li>🥑 Custom nutrition plan</li>
+              <li>📈 Monthly progress tracking</li>
+              <li>💬 Coach consultations</li>
+            </ul>
+          </div>
+          <button class="mt-8 w-full py-3 rounded-lg bg-white text-amber-600 font-semibold hover:bg-gray-300 transition">
+            Join Now
+          </button>
         </div>
 
-        <!-- Testimonial 3 -->
-        <div class="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3">
-          <img src="img/avatar-richard.png" class="w-16 -mt-14" alt="" />
-          <h5 class="text-lg font-bold">Richard Watts</h5>
-          <p class="text-sm text-darkGrayishBlue">
-            “Manage has supercharged our team’s workflow. The ability to
-            maintain visibility on larger milestones at all times keeps
-            everyone motivated.”
-          </p>
+        <!-- Elite Plan -->
+        <div class="card-wrap">
+          <div>
+            <div class="icon">
+              🏆
+            </div>
+            <h3 class="plan-text1">Elite Plan</h3>
+            <p class="text-gray-500 text-sm mb-6">For athletes who want personalized performance training.</p>
+            <p class="text-5xl font-bold text-amber-500 mb-6">$59<span class="text-lg text-gray-400">/mo</span></p>
+            <ul class="text-gray-700 text-sm space-y-3 text-left">
+              <li>🏋️ 1-on-1 personal trainer</li>
+              <li>🍱 Tailored diet plan</li>
+              <li>📊 Weekly progress reports</li>
+              <li>🧘 Recovery & flexibility sessions</li>
+            </ul>
+          </div>
+          <button class="mt-8 w-full py-3 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-800 transition">
+            Go Premium
+          </button>
         </div>
+
       </div>
     </div>
   </section>
+
 
   <section id="cta">
     <div class="form-wrapper">
@@ -140,34 +174,34 @@
     <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto">
       <!-- Logo and social links container -->
       <div class="flex flex-col-reverse items-center justify-between space-y-12">
-        <div class="mx-auto my-6 text-center text-white">
+        <div class="mx-auto my-6 text-center text-black">
           IziFit &copy 2025. Sva prava zadržana
         </div>
         <!-- Logo -->
         <div class="flex justify-center space-x-4">
-          <img src="img/izifit.svg" class="img-logo" alt="logo" />
+          <!-- <img src="img/izifit.svg" class="img-logo" alt="logo" /> -->
         </div>
         <!-- Social Links Container -->
         <div class="flex justify-center space-x-4">
           <!-- Link 1 -->
           <a href="#">
-            <img src="img/icon-facebook.svg" alt="" class="h-8" />
+            <!-- <img src="img/icon-facebook.svg" alt="" class="h-8" /> -->
           </a>
           <!-- Link 2 -->
           <a href="#">
-            <img src="img/icon-youtube.svg" alt="" class="h-8" />
+            <!-- <img src="img/icon-youtube.svg" alt="" class="h-8" /> -->
           </a>
           <!-- Link 3 -->
           <a href="#">
-            <img src="img/icon-twitter.svg" alt="" class="h-8" />
+            <!-- <img src="img/icon-twitter.svg" alt="" class="h-8" /> -->
           </a>
           <!-- Link 4 -->
           <a href="#">
-            <img src="img/icon-pinterest.svg" alt="" class="h-8" />
+            <!-- <img src="img/icon-pinterest.svg" alt="" class="h-8" /> -->
           </a>
           <!-- Link 5 -->
           <a href="#">
-            <img src="img/icon-instagram.svg" alt="" class="h-8" />
+            <!-- <img src="img/icon-instagram.svg" alt="" class="h-8" /> -->
           </a>
         </div>
       </div>
