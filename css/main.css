@@ -444,6 +444,21 @@
 :root {
   --white_filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(54deg) brightness(105%) contrast(101%);
 }
+svg {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.container {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: middle;
+  overflow: hidden;
+}
 .nav-wrapper {
   position: relative;
   width: 100%;
@@ -737,6 +752,28 @@
   }
   @media (width >= 48rem) {
     width: calc(1/2 * 100%);
+  }
+}
+.text-wrapper-hero h1 {
+  margin-inline: auto;
+  padding-top: calc(var(--spacing) * 1);
+  text-align: center;
+  font-size: var(--text-4xl);
+  line-height: var(--tw-leading, var(--text-4xl--line-height));
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+  @media (width >= 48rem) {
+    text-align: center;
+  }
+}
+.text-wrapper-hero h2 {
+  margin-inline: auto;
+  padding-top: calc(var(--spacing) * 1);
+  text-align: center;
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+  @media (width >= 48rem) {
+    text-align: center;
   }
 }
 .text-h2 {
