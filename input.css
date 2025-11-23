@@ -10,6 +10,24 @@
     --white_filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(54deg) brightness(105%) contrast(101%);
 }
 
+/* Wave Background */
+svg {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.container {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: middle;
+  overflow: hidden;
+}
+/* End */
+
 .nav-wrapper {
     @apply relative container m-auto p-2;
 }
@@ -104,6 +122,14 @@
 
 .text-wrapper{
     @apply flex flex-col space-y-7 md:w-1/2 justify-center;
+}
+
+.text-wrapper-hero h1 {
+    @apply text-4xl font-bold text-center md:text-center mx-auto pt-1;
+}
+
+.text-wrapper-hero h2 {
+    @apply text-2xl text-center md:text-center mx-auto pt-1;
 }
 
 .text-h2{
