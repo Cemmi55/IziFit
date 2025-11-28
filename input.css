@@ -8,28 +8,43 @@
 :root {
     /* White Filter */
     --white_filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(54deg) brightness(105%) contrast(101%);
+    --biege: #F4EEE2;
+    --black: #3D3D3D;
+    --indexCust: -1;
+
+    --size: min(70vw, 70vh);
 }
 
+html * {
+    font-family: "inter Fallback", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    @apply scroll-smooth;
+}
+
+body {
+    @apply !bg-[var(--biege)];
+}
+
+.main-wrapper {
+    @apply lg:mx-70 z-[var(--indexCust)] mb-10;
+}
+
+.text-wrapper {
+    @apply flex flex-col lg:px-10 md:px-5 max-sm:px-6 space-y-4 lg:w-1/1 justify-center;
+}
+
+/* .main-content {
+    @apply overflow-x-hidden lg:mx-60 z-[var(--indexCust)];
+} */
+
 /* Wave Background */
-svg {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-.container {
-  display: inline-block;
-  position: absolute;
-  width: 100%;
-  padding-bottom: 100%;
-  vertical-align: middle;
-  overflow: hidden;
-}
+
 /* End */
 
 .nav-wrapper {
-    @apply relative container m-auto p-2;
+    @apply relative container p-2 mx-auto w-full;
 }
 
 .nav-el-wrapper {
@@ -37,8 +52,15 @@ svg {
 }
 
 .img-logo {
-    @apply pt-0.5 pl-2 w-[100px] h-[40px];
+    @apply pt-0.5 pl-2 w-[100px] h-[40px] relative z-1;
 }
+
+/* @media screen and (min-width: 992px) {
+    .img-logo {
+        margin-left: -100px;
+    }
+} */
+
 
 .img-logo img {
     /* filter: var(--white_filter); */
@@ -53,37 +75,50 @@ svg {
 }
 
 .video-controll {
-  @apply w-full max-w-full rounded-xl shadow-lg object-cover;
-  aspect-ratio: 16 / 9; /* održava proporciju */
+    @apply w-full max-w-full rounded-xl shadow-lg object-cover;
+    aspect-ratio: 16 / 9;
+    /* održava proporciju */
 }
 
 /* Za jako male ekrane – više visine */
 @media (max-width: 640px) {
-  .video-controll {
-    aspect-ratio: 4 / 3; /* veća visina na mobilnim */
-    @apply h-auto;
-  }
+    .video-controll {
+        aspect-ratio: 4 / 3;
+        /* veća visina na mobilnim */
+        @apply h-auto;
+    }
 }
 
 /* Za tablet uređaje */
 @media (min-width: 641px) and (max-width: 1023px) {
-  .video-controll {
-    aspect-ratio: 16 / 9;
-  }
+    .video-controll {
+        aspect-ratio: 16 / 9;
+    }
 }
 
 #button-wrapper {
-    @apply mt-8 flex justify-center;
+    @apply mt-8 flex justify-center hidden;
 }
 
 .button_scroll {
-    @apply bg-gradient-to-r from-red-500 to-orange-400 text-white font-semibold text-2xl px-8 py-10 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:from-orange-500 hover:to-yellow-400 cursor-pointer;
+    @apply bg-gradient-to-r from-red-500 to-orange-400 text-white font-semibold text-2xl px-8 py-4 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:from-orange-500 hover:to-yellow-400 cursor-pointer;
 }
 
 
 .nav-el-text {
     @apply hidden p-3 px-6 pt-2 text-[#fff] md:block text-2xl font-bold border-[#c3b797] border rounded-4xl bg-[#c3b797];
 }
+
+/* Hero section */
+.hero-title-wrapper h1 {
+    @apply text-3xl font-[1000] text-center md:text-center mx-auto pt-1 italic text-[var(--black)];
+}
+
+.hero-title-wrapper h2 {
+    @apply text-2xl text-center md:text-center mx-auto pt-1 italic text-[var(--black)];
+}
+
+/* End */
 
 /* form-styles.css */
 #cta {
@@ -109,87 +144,127 @@ svg {
 .form-heading {
     @apply text-3xl font-bold text-white text-center uppercase;
 }
+
 /* End */
 
-/* Features */
-#features {
+/* Content class */
+.content {
+    @apply py-10;
+}
+
+/* Override the first one to remove top padding */
+.content:first-of-type {
+    @apply pt-0;
+}
+
+/* End */
+
+/* FEATURES SEKCIJA – potpuno nova verzija */
+.features-section {
+    @apply bg-[var(--black)] text-white py-20 mt-28;
+}
+
+.features-container {
+    @apply container mx-auto px-4;
+}
+
+.features-grid {
+    @apply grid md:grid-cols-2 gap-12 lg:gap-20 items-start;
+}
+
+/* Leva kolona */
+.features-left {
+    @apply space-y-8;
+}
+
+.features-title {
+    @apply text-3xl md:text-4xl font-bold leading-tight text-left;
+}
+
+.features-text {
+    @apply text-lg md:text-xl leading-relaxed text-left;
+}
+
+/* Desna kolona */
+.features-right {
+    @apply flex flex-col;
+}
+
+.features-title-right {
     @apply mb-10;
 }
 
-.features-wrapper{
-    @apply container flex flex-col px-4 mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row;
+.features-list {
+    @apply space-y-5 text-lg md:text-xl;
 }
 
-.text-wrapper{
-    @apply flex flex-col space-y-7 md:w-1/2 justify-center;
+.features-list-item {
+    @apply text-left relative pl-6;
 }
 
-.text-wrapper-hero h1 {
-    @apply text-4xl font-bold text-center md:text-center mx-auto pt-1;
+/* Dodajemo lepšu tačkicu/crticu ispred svake stavke */
+.features-list-item::before {
+    content: "\2713";
+    @apply absolute left-0 text-green-600 font-bold;
 }
 
-.text-wrapper-hero h2 {
-    @apply text-2xl text-center md:text-center mx-auto pt-1;
+/* Opcionalno – ako želiš prave bullet tačkice umesto crtice */
+.features-list-item {
+    /* ako hoćeš prave bullet tačke, zameni ::before sa ovim: */
+    /* @apply list-disc list-inside; */
 }
 
-.text-h2{
-   @apply max-w-md text-5xl font-bold text-center md:text-left;
-}
-
-.paragraph{
-    @apply max-w-sm text-center text-2xl md:text-left;
-}
-
-.n-list {
-    @apply flex flex-col space-y-8 md:w-1/2;
-}
-
-.list {
-    @apply flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row;
-}
-
-.img-cont {
-    @apply rounded-lg overflow-hidden md:w-full;
-}
 /* End */
 
-/* Plans */
-
-#plans {
+/* ACCORDION – potpuno custom klase */
+.accordion-section {
     @apply py-20;
 }
 
-.plans-wrapper {
-    @apply max-w-6xl mx-auto px-6 text-center;
+.accordion-container {
+    @apply container px-4;
 }
 
-.plans-header {
-    @apply text-4xl font-bold text-gray-800 mb-12
+.accordion-main-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-8 text-[var(--black)];
 }
 
-.card-cont {
-    @apply grid gap-8 sm:grid-cols-2 lg:grid-cols-3
+.accordion-item {
+    @apply border border-0 mb-5 px-5 rounded-xl bg-[var(--black)];
 }
 
-.card-wrap {
-    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 flex flex-col justify-between p-8;
+.accordion-header {
+    @apply flex justify-between items-center py-2 cursor-pointer select-none text-[var(--biege)];
 }
 
-.card-wrap-pro {
-    @apply bg-gradient-to-b from-amber-200 to-amber-600 rounded-2xl shadow-2xl text-white flex flex-col justify-between p-8 scale-105;
+.accordion-title {
+    @apply text-xl md:text-2xl font-bold pr-8 italic;
 }
 
-.icon {
-    @apply w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-amber-100 text-amber-600 rounded-full text-2xl;
+.accordion-icon {
+    @apply text-3xl font-light transition-transform duration-300;
 }
 
-.plan-text1 {
-    @apply text-2xl font-semibold text-gray-800 mb-2;
+/* Otvoreno stanje */
+.accordion-item.active .accordion-icon {
+    @apply rotate-45;
+    /* + postaje × */
 }
 
-.play-text2 {
-    @apply text-2xl font-semibold mb-2;
+.accordion-item.active .accordion-content {
+    @apply max-h-96 opacity-100;
 }
+
+.accordion-content {
+    @apply overflow-hidden transition-all duration-500 ease-in-out;
+    max-height: 0;
+    opacity: 0;
+}
+
+.accordion-text {
+    @apply pb-8 pt-0.5 text-lg md:text-xl leading-relaxed text-white;
+}
+
 /* End */
 
 body {
@@ -203,11 +278,11 @@ body {
     }
 
     body::-webkit-scrollbar-track {
-        @apply bg-[#272727] rounded-full;
+        @apply bg-[var(--beige)] rounded-full;
     }
 
     body::-webkit-scrollbar-thumb {
-        @apply bg-[#c3b797] rounded-full;
+        @apply bg-[#a59b81] rounded-full;
     }
 }
 
@@ -272,4 +347,273 @@ body {
 
 .open .hamburger-bottom {
     transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+.izi {
+    @apply text-5xl font-[1000] text-center md:text-left italic text-[var(--black)];
+}
+
+.izi-2 {
+    @apply text-[18pt] text-center md:text-left italic text-[var(--black)];
+}
+
+.izi-paragraph {
+    @apply text-[14pt] text-center md:text-left text-justify text-[var(--black)];
+}
+
+/* Elementor Shape */
+/* Bottom curved shape (wave) */
+.elementor-shape.elementor-shape-bottom.ele-color2 {
+    margin-top: unset !important;
+}
+
+.elementor-shape.elementor-shape-bottom {
+    z-index: -1;
+    /* Keeps it above the section background */
+    pointer-events: none;
+    /* So it doesn't block clicks */
+    position: absolute;
+    left: 0;
+    margin-top: 5rem;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: translateY(1px);
+    /* Small offset to avoid gap */
+}
+
+.elementor-shape.elementor-shape-bottom svg {
+    position: relative;
+    display: block;
+    left: 10%;
+    width: calc(181% + 1.3px);
+    height: 112px;
+    transform: translateX(-50%) rotateY(180deg);
+}
+
+.elementor-shape-2.elementor-shape-bottom svg {
+    position: relative;
+    display: block;
+    left: 10%;
+    width: calc(181% + 1.3px);
+    height: 112px;
+    transform: translateX(-50%) rotateY(180deg);
+}
+
+.ele-color {
+    /* fill: var(--biege); */
+    fill: var(--black);
+    /* Change this color to match the next section */
+}
+
+.ele-color2 {
+    fill: #F4EEE2;
+    z-index: 2 !important;
+}
+
+/* Optional: Different height on mobile */
+@media (max-width: 767px) {
+    .elementor-shape.elementor-shape-bottom svg {
+        height: 50px;
+        /* Smaller wave on mobile */
+    }
+}
+
+/* If you want to reuse it with different fill colors per section */
+.section-light .elementor-shape-bottom .elementor-shape-fill {
+    fill: #EEEEEE;
+}
+
+.section-dark .elementor-shape-bottom .elementor-shape-fill {
+    fill: #0f0f0f;
+}
+
+.section-red .elementor-shape-bottom .elementor-shape-fill {
+    fill: #5A0B0C;
+}
+
+/* End */
+
+/* Slider */
+.slider-main-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-8 text-[var(--biege)];
+}
+
+#slider {
+    @apply bg-[var(--black)] py-20 mt-28;
+}
+
+.carousel {
+  position: relative;
+  /* top: 50%; */
+  left: 0;
+  /* transform: translateY(-50%); */
+  width: 100%;
+  height: var(--size);
+
+  perspective: calc(var(--size) * 1.6);
+  transform-style: preserve-3d;
+
+  opacity: 0;
+  transition: opacity 0.25s linear;
+}
+
+.carousel.ready {
+  opacity: 1;
+}
+
+.slide {
+  position: absolute;
+  width: calc(var(--size) * 0.6);
+  height: var(--size);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.1);
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ====================== OSNOVNE KLASE ====================== */
+.pricing-section {
+  @apply py-16 bg-gradient-to-b from-gray-50 to-white;
+}
+
+.container {
+  @apply mx-auto px-4 max-w-6xl;
+}
+
+.section-header {
+  @apply text-center mb-12;
+}
+
+.section-header h2 {
+  @apply text-4xl md:text-5xl font-bold text-[var(--black)] mb-4;
+}
+
+.section-header p {
+  @apply text-xl text-gray-600;
+}
+
+.pricing-grid {
+  @apply grid md:grid-cols-2 gap-8 max-w-5xl mx-auto;
+}
+
+/* ====================== KARTICE ====================== */
+.pricing-card {
+  @apply bg-white rounded-2xl shadow-xl overflow-hidden transition-all;
+}
+
+.pricing-card-featured {
+  @apply shadow-2xl;
+}
+
+.card-header {
+  @apply py-6 px-8 text-white;
+}
+
+.card-header-blue {
+  @apply bg-gradient-to-r from-blue-600 to-blue-700;
+}
+
+.card-header-amber {
+  @apply bg-gradient-to-r from-amber-500 to-orange-600;
+}
+
+.card-header h3 {
+  @apply text-2xl font-bold;
+}
+
+.header-subtitle {
+  @apply mt-2 opacity-90;
+}
+
+.card-body {
+  @apply p-8 text-center;
+}
+
+/* Badge "Najbolja vrednost" */
+.badge {
+  @apply absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-400 text-amber-900 px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg z-10;
+}
+
+/* ====================== CENE ====================== */
+.price-wrapper {
+  @apply flex items-center justify-center gap-4 flex-wrap;
+}
+
+.old-price {
+  @apply relative text-3xl text-gray-400 line-through opacity-70;
+}
+
+.old-price::after {
+  content: '';
+  @apply absolute top-1/2 left-[-10%] right-[-10%] h-1 bg-red-500 -translate-y-1/2 -rotate-6;
+}
+
+.new-price {
+  @apply font-bold;
+}
+
+.new-price-blue {
+  @apply text-5xl text-blue-600;
+}
+
+.new-price-amber {
+  @apply text-6xl text-amber-600;
+}
+
+.saving {
+  @apply text-sm text-gray-500 mt-2;
+}
+
+/* ====================== LISTA ====================== */
+.features-list-2 {
+  @apply mt-8 space-y-4 text-left;
+}
+
+.features-list-2 li {
+  @apply flex items-center gap-3;
+}
+
+.features-list-2 li::before {
+  content: '✓';
+  @apply text-green-500 text-xl font-bold;
+}
+
+/* ====================== DUGMIĆI ====================== */
+.btn {
+  @apply w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-lg;
+}
+
+
+/* End */
+
+
+.popup_div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+}
+
+.popup_content, .sendMess_popup {
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+  color: white;
 }
