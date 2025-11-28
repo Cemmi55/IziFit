@@ -142,7 +142,7 @@ document.getElementById("sendBtn").addEventListener("click", function () {
     </div>
   `);
   // OWNER number here
-  const ownerPhone = "381615156283";
+  const ownerPhone = "381621681385";
 
   // Detect mobile device
   function isMobile() {
@@ -166,7 +166,7 @@ document.getElementById("sendBtn").addEventListener("click", function () {
   });
   // Viber send – ISPRAVKA: Koristi &draft= umesto &text=, popravljen broj, dodata provera fokusa
   popup.querySelector("#popupViber").addEventListener("click", () => {
-    const phoneWithPlus = "+381615156283"; // Ispravka: Direktno sa +381, bez slice greške
+    const phoneWithPlus = "+381621681385"; // Ispravka: Direktno sa +381, bez slice greške
     const encodedMessage = encodeURIComponent(finalText);
     // ISPRAVKA: &draft= umesto &text= – ovo popunjava input polje
     const viberUrl = `viber://chat/?number=${encodeURIComponent(phoneWithPlus)}&draft=${encodedMessage}`;
