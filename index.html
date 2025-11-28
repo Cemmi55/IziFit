@@ -12,216 +12,419 @@
 </head>
 
 <body>
-     <div class="container">
-      <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
-        <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: none; fill:beige;"></path>
-      </svg>
-    </div>
-  <!-- Navbar -->
-  <nav class="nav-wrapper">
-    <!-- Flex container -->
-    <div class="nav-el-wrapper">
-      <!-- Logo -->
-      <div class="img-logo">
-        <img src="img/izifit.svg" alt="logo" />
-      </div>
-      <!-- <a id="scroll-form" href="" class="nav-el-text">PIŠI NAM</a> -->
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="text-wrapper-hero">
-      <h1>Kako da uđeš u životnu formu i optimizuješ zdravlje kroz naše online mentorstvo?</h1>
-      <h2>(Klikni na play dugme na video klipu ispod da saznaš👇)</h2>
-    </div>
-    <div class="hero-wrapper">
-      <video controls class="video-controll">
-        <source src="video/Epic.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div id="button-wrapper">
-      <button class="button_scroll">
-        Rezerviši svoje mesto
-      </button>
-    </div>
-
- 
-
-  </section>
-
-  <section id="features">
-    <!-- Flex container -->
-    <div class="features-wrapper">
-      <!-- What's Different -->
-      <div class="text-wrapper">
-        <h2 class="text-h2">
-          Zdrava ishrana, zdrav život
-        </h2>
-        <p class="paragraph">
-          Pravilna ishrana se bazira na svežem voću, povrću i integralnim namirnicama. Zdrava hrana pomaže telu da
-          funkcioniše optimalno i održava energiju tokom celog dana.
-        </p>
-      </div>
-      <!-- Numbered List -->
-      <div class="n-list">
-        <!-- List Item 1 -->
-        <div class="list">
-          <!-- Image Container -->
-          <div class="img-cont">
-            <img src="img/food.webp" alt="Feature Image" class="w-full h-auto object-cover rounded-lg" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Plans -->
-  <section id="plans">
-    <div class="plans-wrapper">
-      <h2 class="plans-header">Choose Your Fitness Plan</h2>
-
-      <!-- Responsive Cards Container -->
-      <div class="card-cont">
-
-        <!-- Starter Plan -->
-        <div class="card-wrap">
-          <div>
-            <div class="icon">
-              💪
-            </div>
-            <h3 class="plan-text1">Starter Plan</h3>
-            <p class="text-gray-500 text-sm mb-6">Perfect for beginners starting their fitness journey.</p>
-            <p class="text-5xl font-bold text-amber-500 mb-6">$19<span class="text-lg text-gray-400">/mo</span></p>
-            <ul class="text-gray-700 text-sm space-y-3 text-left">
-              <li>🏋️ Access to basic gym equipment</li>
-              <li>🕒 3 training sessions per week</li>
-              <li>🥗 Basic meal plan</li>
-            </ul>
-          </div>
-          <button
-            class="mt-8 w-full py-3 rounded-lg bg-amber-500 text-white font-semibold hover:bg-amber-800 transition">
-            Get Started
-          </button>
-        </div>
-
-        <!-- Pro Plan -->
-        <div class="card-wrap-pro">
-          <div>
-            <div class="icon">
-              🔥
-            </div>
-            <h3 class="play-text2">Pro Plan</h3>
-            <p class="text-gray-100 text-sm mb-6">For those ready to push beyond their limits.</p>
-            <p class="text-5xl font-bold mb-6">$39<span class="text-lg text-gray-100">/mo</span></p>
-            <ul class="text-sm space-y-3 text-left">
-              <li>💪 Full gym access</li>
-              <li>🥑 Custom nutrition plan</li>
-              <li>📈 Monthly progress tracking</li>
-              <li>💬 Coach consultations</li>
-            </ul>
-          </div>
-          <button
-            class="mt-8 w-full py-3 rounded-lg bg-white text-amber-600 font-semibold hover:bg-gray-300 transition">
-            Join Now
-          </button>
-        </div>
-
-        <!-- Elite Plan -->
-        <div class="card-wrap">
-          <div>
-            <div class="icon">
-              🏆
-            </div>
-            <h3 class="plan-text1">Elite Plan</h3>
-            <p class="text-gray-500 text-sm mb-6">For athletes who want personalized performance training.</p>
-            <p class="text-5xl font-bold text-amber-500 mb-6">$59<span class="text-lg text-gray-400">/mo</span></p>
-            <ul class="text-gray-700 text-sm space-y-3 text-left">
-              <li>🏋️ 1-on-1 personal trainer</li>
-              <li>🍱 Tailored diet plan</li>
-              <li>📊 Weekly progress reports</li>
-              <li>🧘 Recovery & flexibility sessions</li>
-            </ul>
-          </div>
-          <button
-            class="mt-8 w-full py-3 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-800 transition">
-            Go Premium
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <section id="cta">
-    <div class="form-wrapper">
-      <h2 class="form-heading text-center text-2xl font-bold">Kontaktiraj Nas</h2>
-
-      <form id="contactForm" class="w-full mt-6 flex flex-col gap-3 max-w-md mx-auto">
-        <!-- Name -->
-        <input type="text" id="name" class="input-field border border-gray-300 rounded p-2" placeholder="Vaše Ime"
-          required />
-
-        <!-- Message -->
-        <textarea id="message" class="textarea-field border border-gray-300 rounded p-2" rows="5"
-          placeholder="Vaša poruka..." required></textarea>
-
-        <!-- Phone -->
-        <input type="text" id="phone" class="input-field border border-gray-300 rounded p-2"
-          placeholder="Vaš broj telefona..." />
-
-        <!-- Send button -->
-        <div class="w-full flex justify-center gap-4 mt-4">
-          <!-- Send button -->
-          <button type="button" id="sendBtn"
-            class="submit-btn bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition">
-            Pošalji
-          </button>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-veryDarkBlue">
-    <!-- Flex Container -->
-    <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto">
-      <!-- Logo and social links container -->
-      <div class="flex flex-col-reverse items-center justify-between space-y-12">
-        <div class="mx-auto my-6 text-center text-black">
-          IziFit &copy 2025. Sva prava zadržana
-        </div>
+  <div class="main-content">
+    <!-- Navbar -->
+    <nav class="nav-wrapper">
+      <!-- Flex container -->
+      <div class="nav-el-wrapper">
         <!-- Logo -->
-        <div class="flex justify-center space-x-4">
-          <!-- <img src="img/izifit.svg" class="img-logo" alt="logo" /> -->
+        <div class="img-logo">
+          <img src="img/izifit.svg" alt="logo" />
         </div>
-        <!-- Social Links Container -->
-        <div class="flex justify-center space-x-4">
-          <!-- Link 1 -->
-          <a href="#">
-            <!-- <img src="img/icon-facebook.svg" alt="" class="h-8" /> -->
-          </a>
-          <!-- Link 2 -->
-          <a href="#">
-            <!-- <img src="img/icon-youtube.svg" alt="" class="h-8" /> -->
-          </a>
-          <!-- Link 3 -->
-          <a href="#">
-            <!-- <img src="img/icon-twitter.svg" alt="" class="h-8" /> -->
-          </a>
-          <!-- Link 4 -->
-          <a href="#">
-            <!-- <img src="img/icon-pinterest.svg" alt="" class="h-8" /> -->
-          </a>
-          <!-- Link 5 -->
-          <a href="#">
-            <!-- <img src="img/icon-instagram.svg" alt="" class="h-8" /> -->
-          </a>
+        <!-- <a id="scroll-form" href="" class="nav-el-text">PIŠI NAM</a> -->
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="content">
+      <div class="main-wrapper">
+        <div class="hero-title-wrapper">
+          <h1>Kako da uđeš u životnu formu i optimizuješ zdravlje kroz naše online mentorstvo?</h1>
+          <h2>(Klikni na play dugme na video klipu ispod da saznaš👇)</h2>
+        </div>
+        <div class="hero-wrapper">
+          <video controls class="video-controll">
+            <source src="video/vslmp4.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div id="button-wrapper">
+          <button class="button_scroll">
+            Rezerviši svoje mesto
+          </button>
+        </div>
+        <div class="features-wrapper">
+          <div class="text-wrapper">
+            <h2 class="izi">
+              IZIFIT ONLINE MENTORSTVO
+            </h2>
+            <h2 class="izi-2">
+              Gradimo telo, balansiramo hormone i podižemo zdravlje na viši nivo.
+            </h2>
+            <p class="izi-paragraph">
+              Naše mentorstvo je mnogo više od generičkog programa. U pitanju je dinamična saradnja,naša puna podrška i
+              posvećenost tebi. Mi verujemo u individualan pristup i zajedno sa tobom radimo na tvom zdravlju i
+              izgledu.<br>
+              Najpre utvrdimo na čemu radimo, zatim kreiramo plan koji tokom saradnje na nedeljnom nivou korigujemo i
+              prilagođavamo u skladu sa tvojim napretkom, obavezama i životnim stilom.<br>
+              Ovakav sistematičan pristup je najbrži način da unaprediš zdravlje, uđeš u životnu formu i povratiš
+              energiju i samopouzdanje.<br>
+            </p>
+          </div>
         </div>
       </div>
-      <!-- List Container -->
-      <!-- <div class="flex justify-around space-x-32">
+      <div class="elementor-shape elementor-shape-bottom ele-color" aria-hidden="true" data-negative="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+          <path class="elementor-shape-fill" d="M790.5,93.1c-59.3-5.3-116.8-18-192.6-50c-29.6-12.7-76.9-31-100.5-35.9c-23.6-4.9-52.6-7.8-75.5-5.3
+            c-10.2,1.1-22.6,1.4-50.1,7.4c-27.2,6.3-58.2,16.6-79.4,24.7c-41.3,15.9-94.9,21.9-134,22.6C72,58.2,0,25.8,0,25.8V100h1000V65.3
+            c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section id="features" class="features-section">
+      <div class="main-wrapper">
+        <div class="features-container">
+
+          <!-- 50/50 Grid -->
+          <div class="features-grid">
+
+            <!-- Leva kolona -->
+            <div class="features-left">
+              <h2 class="features-title">
+                Za koga je naše mentorstvo?
+              </h2>
+              <p class="features-text">
+                Bilo da želiš da izgradiš mišiće i skineš masne naslage, promeniš navike i stvoriš rutinu, unaprediš
+                zdravlje i rešiš određeni zdravstveni problem ili da se opet osećaš samopouzdano, energično i komotno u
+                sopstvenoj koži - naše mentorstvo je za tebe. <br><br>
+                Na mentorstvu primenjujemo sisteme u nutricionizmu i treningu pomoću kojih se mogu ostvariti svi ovi
+                ciljevi i rešiti brojni problemi.
+              </p>
+            </div>
+
+            <!-- Desna kolona -->
+            <div class="features-right">
+              <h2 class="features-title features-title-right">
+                Ovo su samo neki od problema koje rešavamo i ciljeva koje ostvarujemo:
+              </h2>
+
+              <div class="features-list">
+                <p class="features-list-item">Gubitak masnih naslaga</p>
+                <p class="features-list-item">Izgradnja mišića i telesna rekompozicija</p>
+                <p class="features-list-item">Probijanje platoa u snazi hipertrofiji kod naprednih vežbača</p>
+                <p class="features-list-item">Ubrzavanje metabolizma</p>
+                <p class="features-list-item">Poboljšanje krvne slike i hormona</p>
+                <p class="features-list-item">Rešavanje insulinske rezistencije</p>
+                <p class="features-list-item">Adresiranje usporene štitne i Hašimota</p>
+                <p class="features-list-item">Rešavanje problema sa Kandidom i Helikobakterijom</p>
+                <p class="features-list-item">Rešavanje PCOS i policističnih jajnika</p>
+                <p class="features-list-item">Rehabilitacija i oporavak od povreda</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="elementor-shape elementor-shape-bottom ele-color2" aria-hidden="true" data-negative="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+          <path class="elementor-shape-fill" d="M790.5,93.1c-59.3-5.3-116.8-18-192.6-50c-29.6-12.7-76.9-31-100.5-35.9c-23.6-4.9-52.6-7.8-75.5-5.3
+            c-10.2,1.1-22.6,1.4-50.1,7.4c-27.2,6.3-58.2,16.6-79.4,24.7c-41.3,15.9-94.9,21.9-134,22.6C72,58.2,0,25.8,0,25.8V100h1000V65.3
+            c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Plans -->
+    <section id="plans" class="content">
+      <div class="main-wrapper">
+        <div class="accordion-container">
+
+          <h2 class="accordion-main-title">Šta sve dobijaš?</h2>
+
+          <!-- Accordion item -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">Analiza trenutnog stanja i definisanje cilja</h3>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p class="accordion-text">
+                Na početku saradnje, upoznamo se ,utvrdimo na čemu radimo i detaljno analiziramo tvoje trenutno
+                zdravstveno stanje. Popunjavanjem upitnika daješ nam informacije o tvojim navikama,obavezama i stilu
+                života, na osnovu kojih pravimo savršen plan i strategiju za tebe.<br>
+                Zajedno definišemo cilj i krećemo sa radom.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">Plan ishrane prilagođen cilju</h3>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p class="accordion-text">
+                Za razliku od većine drugih programa koji daju nekompletne smernice u ishrani i zahtevaju od tebe da sam
+                brojiš kalorije i uklapaš obroke, na našem mentorstvu dobijaš kompletan plan ishrane.<br>
+                On obuhvata tačne recepte,namirnice,količine, kao i tajming obroka.<br>
+                Na ovaj način mi brinemo o kalorijama i makrosima, a na tebi je samo da pripremiš obroke.<br>
+                Uz sve to, plan ishrane se na nedeljnom nivou izmenjuje tako da ishrana bude raznovrsna i nikada
+                monotona
+                i dosadna.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">Plan treninga prilagođen cilju</h3>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p class="accordion-text">
+                Dobijaš personalizovan plan treninga koji je raspoređen po danima. Za svaku vežbu naveden je broj
+                serija,
+                ponavljanja i način izvođenja. Na našem mentorstvu trening je periodizovan, što znači da ga kroz vreme
+                korigujemo i prilagođavamo tako da napreduješ konstantno, bez stagnacije.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">Plan suplementacije prilagođen cilju</h3>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p class="accordion-text">
+                Suplementi su mali deo cele priče, ali mogu nam pomoći da se osetimo bolje, pogotovo kod određenih
+                zdravstvenih stanja.<br>
+                Za svakog klijenta pravimo i plan suplementacije koji odgovara cilju.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">Nedeljni check-in i izveštaj</h3>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p class="accordion-text">
+                Ovo je najvažniji deo naše saradnje i razlog zašto je nazivamo MENTORSTVO. Mi ne prodajemo gotove
+                generičke planove, već individualno vodimo svakog našeg klijenta.<br>
+                Na svakih 7 dana radimo nedeljni check-in u okviru kog nam klijenti šalju kratki izveštaj na osnovu kog
+                pravimo izmene u planu za narednu nedelju.<br>
+                Na taj način saradnja je dinamična, ishrana raznovrsna, a trening uz stalno prilagođavanje donosi
+                konstantan napredak u snazi i izgledu.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">Edukacija kroz ceo proces</h3>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p class="accordion-text">
+                Kroz ceo proces, govorimo ti ne samo šta da radiš, već i zašto. Edukujemo te na temu zdravlja i učimo te
+                kako to možeš i sam da primenjuješ i preneseš drugima.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">Pristup našoj bazi vežbi</h3>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p class="accordion-text">
+                Svaki klijent na mentorstvu dobija pristup našoj bazi vežbi sa video tutorijalima izvođenja svih
+                pokreta.
+                Ovo najviše znači klijentima koji nemaju pređašnjeg iskustva u teretani i pomaže im da savladaju
+                izvođenje
+                svih vežbi.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <h3 class="accordion-title">Podrška 24/7</h3>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p class="accordion-text">
+                Mi verujemo da je komunikacija ključ uspešne saradnje i zato razgovaramo sa klijentima na dnevnom
+                nivou.<br>
+                Dobijaš naš kontakt na Viberu/Whatssappu i dostupni smo ti 24/7 za savete,podršku i motivaciju.<br>
+                Stalna komunikacija nam omogućava da plan maksimalno prilagodimo tvom stilu života,poslu,obavezama i
+                navikama.
+              </p>
+            </div>
+          </div>
+          <!-- Dodaj koliko god hoćeš ovakvih item-a -->
+        </div>
+      </div>
+      <div class="elementor-shape elementor-shape-bottom ele-color" aria-hidden="true" data-negative="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+          <path class="elementor-shape-fill" d="M790.5,93.1c-59.3-5.3-116.8-18-192.6-50c-29.6-12.7-76.9-31-100.5-35.9c-23.6-4.9-52.6-7.8-75.5-5.3
+            c-10.2,1.1-22.6,1.4-50.1,7.4c-27.2,6.3-58.2,16.6-79.4,24.7c-41.3,15.9-94.9,21.9-134,22.6C72,58.2,0,25.8,0,25.8V100h1000V65.3
+            c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section id="slider" class="content hidden">
+      <div class="main-wrapper">
+        <h2 class="slider-main-title">Pogledaj samo neke od rezultata koje postižu naši klijenti:</h2>
+
+        <div class="carousel" id="carousel">
+          <div class="slide">
+            <img src="https://picsum.photos/id/757/400/600" alt="">
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/id/59/400/600" alt="">
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/id/400/400/600" alt="">
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/id/260/400/600" alt="">
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/id/358/400/600" alt="">
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/id/478/400/600" alt="">
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/id/625/400/600" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Naši Paketi</h2>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- 4-nedeljni paket -->
+          <div class="pricing-card">
+            <div class="card-header card-header-blue">
+              <h3>4-Nedeljni Program</h3>
+              <p class="header-subtitle">Brzi start ka rezultatima</p>
+            </div>
+
+            <div class="card-body">
+              <div class="price-wrapper">
+                <span class="old-price">150€</span>
+                <span class="new-price new-price-blue">99€</span>
+              </div>
+              <p class="saving">Ušteda od 51€!</p>
+
+              <ul class="features-list-2">
+                <li>Kompletan 4-nedeljni plan</li>
+                <li>Podrška 24/7</li>
+                <li>Bonus materijali</li>
+              </ul>
+
+              <button class="btn btn-primary">Izaberi 4 Nedelje</button>
+            </div>
+          </div>
+
+          <!-- 12-nedeljni paket (preporučeno) -->
+          <div class="pricing-card pricing-card-featured">
+            <div class="badge">Najbolja vrednost</div>
+
+            <div class="card-header card-header-amber">
+              <h3>12-Nedeljni Program</h3>
+              <p class="header-subtitle">Kompletna transformacija</p>
+            </div>
+
+            <div class="card-body">
+              <div class="price-wrapper">
+                <span class="old-price">300€</span>
+                <span class="new-price new-price-amber">249€</span>
+              </div>
+              <p class="saving">Ušteda od 51€ – samo 20.75€ po nedelji!</p>
+
+              <ul class="features-list-2">
+                <li>Sve iz 4-nedeljnog + napredni moduli</li>
+                <li>1-na-1 konsultacije</li>
+                <li>Garancija rezultata</li>
+                <li>Doživotni pristup materijalima</li>
+              </ul>
+
+              <button class="btn btn-secondary">Izaberi 12 Nedelja → Najbolji izbor</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="cta" class="content">
+      <div class="form-wrapper">
+        <h2 class="form-heading text-center text-2xl font-bold">Kontaktiraj Nas</h2>
+
+        <form id="contactForm" class="w-full mt-6 flex flex-col gap-3 max-w-md mx-auto">
+          <!-- Name -->
+          <input type="text" id="name" class="input-field border border-gray-300 rounded p-2" placeholder="Vaše Ime"
+            required />
+
+          <!-- Message -->
+          <textarea id="message" class="textarea-field border border-gray-300 rounded p-2" rows="5"
+            placeholder="Vaša poruka..." required></textarea>
+
+          <!-- Phone -->
+          <input type="text" id="phone" class="input-field border border-gray-300 rounded p-2"
+            placeholder="Vaš broj telefona..." />
+
+          <!-- Send button -->
+          <div class="w-full flex justify-center gap-4 mt-4">
+            <!-- Send button -->
+            <button type="button" id="sendBtn"
+              class="submit-btn bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition">
+              Pošalji
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-veryDarkBlue">
+      <!-- Flex Container -->
+      <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto">
+        <!-- Logo and social links container -->
+        <div class="flex flex-col-reverse items-center justify-between space-y-12">
+          <div class="mx-auto my-6 text-center text-black">
+            IziFit &copy 2025. Sva prava zadržana
+          </div>
+          <!-- Logo -->
+          <div class="flex justify-center space-x-4">
+            <!-- <img src="img/izifit.svg" class="img-logo" alt="logo" /> -->
+          </div>
+          <!-- Social Links Container -->
+          <div class="flex justify-center space-x-4">
+            <!-- Link 1 -->
+            <a href="#">
+              <!-- <img src="img/icon-facebook.svg" alt="" class="h-8" /> -->
+            </a>
+            <!-- Link 2 -->
+            <a href="#">
+              <!-- <img src="img/icon-youtube.svg" alt="" class="h-8" /> -->
+            </a>
+            <!-- Link 3 -->
+            <a href="#">
+              <!-- <img src="img/icon-twitter.svg" alt="" class="h-8" /> -->
+            </a>
+            <!-- Link 4 -->
+            <a href="#">
+              <!-- <img src="img/icon-pinterest.svg" alt="" class="h-8" /> -->
+            </a>
+            <!-- Link 5 -->
+            <a href="#">
+              <!-- <img src="img/icon-instagram.svg" alt="" class="h-8" /> -->
+            </a>
+          </div>
+        </div>
+        <!-- List Container -->
+        <!-- <div class="flex justify-around space-x-32">
           <div class="flex flex-col space-y-3 text-white">
             <a href="#" class="hover:text-brightRed">Home</a>
             <a href="#" class="hover:text-brightRed">Pricing</a>
@@ -234,8 +437,9 @@
             <a href="#" class="hover:text-brightRed">Privacy Policy</a>
           </div>
         </div> -->
-    </div>
-  </footer>
+      </div>
+    </footer>
+  </div>
   <script src="js/script.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
